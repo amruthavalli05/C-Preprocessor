@@ -1,0 +1,22 @@
+
+# MAKEFILE
+
+mypreprocessor: main.o comment_removal.o file_inclusion.o macro_handler.o
+	gcc main.o comment_removal.o file_inclusion.o macro_handler.o -o mypreprocessor
+
+main.o: main.c
+	gcc -c main.c
+
+comment_removal.o: comment_removal.c comment_removal.h
+	gcc -c comment_removal.c
+
+file_inclusion.o: file_inclusion.c file_inclusion.h
+	gcc -c file_inclusion.c
+
+macro_handler.o: macro_handler.c macro_handler.h
+	gcc -c macro_handler.c
+
+clean:
+	@echo "cleaning up"
+	@rm -v *.o
+

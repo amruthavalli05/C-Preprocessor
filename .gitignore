@@ -1,0 +1,4 @@
+*.o
+mypreprocessor
+temp1.c
+temp2.c
